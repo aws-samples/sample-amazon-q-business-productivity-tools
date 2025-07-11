@@ -98,6 +98,28 @@ The evaluation process involves:
 3. **Evaluate**: Run the evaluation against your ground truth data
 4. **Results**: View and analyze the evaluation results
 
+#### Ground Truth Dataset Format
+
+The ground truth dataset must be uploaded as a CSV file with the following specifications:
+
+- **Required Columns**:
+  - `prompt`: Contains the query or question text that will be sent to Amazon Q Business
+  - `groundTruth`: Contains the expected correct response for comparison
+
+- **File Requirements**:
+  - File format: CSV (Comma-Separated Values)
+  - Maximum file size: 10MB
+  - Rows with empty prompt fields will be automatically filtered out
+
+Example CSV format:
+```
+prompt,groundTruth
+"What is Amazon Q Business?","Amazon Q Business is an AI-powered assistant designed for workplace use that can answer questions, generate content, and complete tasks."
+"How do I configure a data source?","To configure a data source, navigate to the Amazon Q Business console, select Applications, choose your application, and click on Data sources to add a new connector."
+```
+
+Template files are available for download within the application to help you get started with the correct format.
+
 ## Getting Started
 
 ### Prerequisites

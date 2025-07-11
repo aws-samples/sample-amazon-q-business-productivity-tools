@@ -162,7 +162,7 @@ const UploadDataComponent: React.FC<UploadDataComponentProps> = ({
             ) : (
               <>
                 <Upload className="h-10 w-10 text-gray-500 mx-auto mb-4" />
-                <p className="text-gray-400 mb-2">Drag and drop your CSV or Excel file here</p>
+                <p className="text-gray-400 mb-2">Drag and drop your CSV file here</p>
                 <p className="text-gray-500 text-sm">or</p>
                 <button className="mt-4 px-4 py-2 bg-purple-500/20 text-purple-400 rounded-lg hover:bg-purple-500/30 transition-all">
                   Browse Files
