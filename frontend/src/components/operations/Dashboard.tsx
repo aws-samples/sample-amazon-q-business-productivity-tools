@@ -6,7 +6,7 @@ import React, { useState, useEffect } from 'react';
 
 import AccessCheckerComponent from './AccessCheckerComponent';
 import ACLViewerComponent from './ACLViewerComponent';
-import GroupMembershipComponent from './GroupMembershipComponent';
+// import GroupMembershipComponent from './GroupMembershipComponent';
 import SyncErrorsComponent from './SyncErrorsComponent';
 import {
   qBusinessProxyService,
@@ -74,7 +74,7 @@ const Dashboard: React.FC<DashboardProps> = ({ config, onConfigChange }) => {
   // Define available tabs based on current config
   const getTabs = () => [
     { id: 'metrics', label: 'Sync Metrics', show: true },
-    { id: 'groups', label: 'Group Membership', show: isQBusinessConfig },
+    // { id: 'groups', label: 'Group Membership', show: isQBusinessConfig },
     { id: 'acl', label: 'ACL Viewer', show: true },
     { id: 'access', label: 'Access Checker', show: isQBusinessConfig },
     { id: 'errors', label: 'Sync Errors', show: true },
@@ -515,28 +515,7 @@ const Dashboard: React.FC<DashboardProps> = ({ config, onConfigChange }) => {
               />
             )}
 
-            {isQBusinessConfig && activeTab === 'groups' && (
-              <GroupMembershipComponent
-                config={
-                  {
-                    type: 'QBUSINESS',
-                    applicationId: selectedQbApplication,
-                    indexId: selectedQbIndex,
-                    dataSourceId: selectedQbDataSource,
-                    syncJobId: selectedQbSyncJob || '',
-                    syncJobExecutionId: selectedQbSyncJob || '',
-                    retrieverId:
-                      qbApplications.find((app) => app.applicationId === selectedQbApplication)
-                        ?.retrieverId || '',
-                    syncJobStartTime: qbSyncJobs.find(
-                      (job) => job.executionId === selectedQbSyncJob,
-                    )?.startTime,
-                    syncJobEndTime: qbSyncJobs.find((job) => job.executionId === selectedQbSyncJob)
-                      ?.endTime,
-                  } as QBusinessConfig
-                }
-              />
-            )}
+            {/* Group Membership Component removed */}
 
             {activeTab === 'acl' && (
               <ACLViewerComponent

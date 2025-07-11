@@ -53,10 +53,6 @@ The Operations Dashboard includes the following tabs:
 
 This tab shows metrics emitted in CloudWatch for the configured application and the last sync run. It provides insights into the performance and health of your sync jobs.
 
-#### Group Membership
-
-This tab shows all the groups that were crawled during the Identity Crawling phase of the connector run. When Identity Crawler runs, the connector fetches all the groups present in the data source. For each local group, identity crawler also fetches the members of the group.
-
 #### ACL Viewer
 
 This tab allows you to visualize all the documents that were crawled during the last sync run. For each document, it lists all the ACLs associated with it, which might include Local Groups, Global Groups, and Users.
