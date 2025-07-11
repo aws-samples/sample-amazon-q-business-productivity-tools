@@ -274,4 +274,4 @@ If you encounter issues:
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+See [CONTRIBUTING](./CONTRIBUTING.md) for more information.

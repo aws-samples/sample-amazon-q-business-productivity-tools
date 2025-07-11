@@ -900,21 +900,6 @@ const Evaluate: React.FC<EvaluateProps> = ({
         <div className="mb-8">
           <h3 className="text-sm font-semibold text-gray-400 mb-3">CONFIGURE S3</h3>
           <div className="bg-gray-800/30 p-4 rounded-xl border border-gray-700 mb-4">
-            {/* Warning about CORS policy */}
-            <div className="mb-4 bg-yellow-900/30 border border-yellow-700/50 rounded-lg p-3 flex items-start">
-              <AlertTriangle className="h-5 w-5 text-yellow-500 mr-2 flex-shrink-0 mt-0.5" />
-              <div>
-                <p className="text-yellow-200 text-sm font-medium">
-                  Important: Cross Origin Access Policy Required
-                </p>
-                <p className="text-yellow-200/70 text-xs mt-1">
-                  The S3 bucket you enter must have Cross Origin Resource Sharing (CORS) policy
-                  enabled to allow browser-based uploads. Without proper CORS configuration, the
-                  upload may fail.
-                </p>
-              </div>
-            </div>
-
             <div className="mb-4">
               <label className="block text-sm font-medium text-gray-400 mb-2">S3 Bucket Name</label>
               <input
