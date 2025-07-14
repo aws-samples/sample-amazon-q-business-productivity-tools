@@ -45,7 +45,7 @@ The application supports multiple authentication methods:
 
 Monitor, analyze, and troubleshoot your Amazon Q Business data source sync jobs with powerful insights and visualizations.
 
-![Operations Dashboard](docs/images/Operations%20Dashboard%20landing%20page.png)
+![Operations Dashboard](docs/images/Operations_Dashboard.png)
 
 The Operations Dashboard includes the following tabs:
 

@@ -212,8 +212,18 @@ const ChatBot: React.FC = () => {
           }
         } else if (data.type === 'error') {
           // Handle error
-          console.error('Streaming error:', data.message);
-          setError(data.message || 'An error occurred during streaming');
+          console.error('Streaming Error:', data.message);
+          
+          // Check if the error is due to expired security token
+          const isExpiredToken = data.message && 
+            data.message.includes("security token included in the request is expired");
+          
+          // Set appropriate error message
+          const errorMessage = isExpiredToken 
+            ? 'Your AWS credentials have expired. Please sign out and sign back in to continue.'
+            : (data.message || 'An error occurred during streaming');
+          
+          setError(errorMessage);
           setIsChatting(false);
 
           // Add error message to chat
@@ -221,7 +231,9 @@ const ChatBot: React.FC = () => {
             ...prev,
             {
               role: 'assistant',
-              content: 'Sorry, there was an error processing your message. Please try again.',
+              content: isExpiredToken 
+                ? 'Your AWS credentials have expired. Please sign out and sign back in to continue.'
+                : 'Sorry, there was an error processing your message. Please try again.',
             },
           ]);
 
