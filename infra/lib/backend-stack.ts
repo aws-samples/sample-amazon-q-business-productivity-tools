@@ -392,9 +392,18 @@ export class BackendStack extends cdk.Stack {
                 actions: [
                     "dynamodb:PutItem",
                     "dynamodb:GetItem",
-                    "dynamodb:ListTables",
                 ],
                 resources: [userSessionTable.tableArn],
+            })
+        );
+
+        taskRole.addToPolicy(
+            new iam.PolicyStatement({
+                actions: [
+                    "dynamodb:ListTables",
+
+                ],
+                resources: ["*"],
             })
         );
 
